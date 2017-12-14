@@ -1,25 +1,27 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 06
+ Fichier     : Lion.java
+ Auteurs     : Yohann Meyer, Guillaume Zaretti
+ Date        : 14.12.2017
 
+ But         : Classe spécialisée modélisant un annimal Lion.
+
+ Remarque(s) : 
+
+ Compilateur : jdk1.8.0_144
+ -----------------------------------------------------------------------------------
 import java.util.*;
 
-/**
- * 
  */
 public class Lion extends Animal {
 
-    /**
-     * Default constructor
-     */
     public Lion() {
     }
 
-    /**
-     * 
-     */
-    private static Regime regimeDef;
+    public static void setRegimeDef(Regime regimeDef) {
+        Lion.regimeDef = regimeDef;
+    }
 
-    /**
-     * 
-     */
-    private static double qteNouritureDef = 10;
-
+    private static Regime regimeDef = new Regime();
 }

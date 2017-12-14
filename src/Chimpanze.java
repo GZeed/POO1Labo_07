@@ -1,4 +1,17 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 06
+ Fichier     : Chimpanze.java
+ Auteurs     : Yohann Meyer, Guillaume Zaretti
+ Date        : 14.12.2017
 
+ But         : Classe spécialisée modélisant un annimal Chimpanze.
+
+ Remarque(s) : 
+
+ Compilateur : jdk1.8.0_144
+ -----------------------------------------------------------------------------------
+ */
 import java.util.*;
 
 /**
@@ -6,20 +19,14 @@ import java.util.*;
  */
 public class Chimpanze extends Animal {
 
-    /**
-     * Default constructor
-     */
     public Chimpanze() {
     }
 
-    /**
-     * 
-     */
-    private static Regime regimeDef;
+     public static void setRegimeDef(Regime regimeDef){
+        Chimpanze.regimeDef = regimeDef;
+    }
+    
 
-    /**
-     * 
-     */
-    private static double qteNouritureDef = 3.5;
+    private static Regime regimeDef = new Regime();
 
 }

@@ -1,79 +1,50 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 06
+ Fichier     : Annimal.java
+ Auteurs     : Yohann Meyer, Guillaume Zaretti
+ Date        : 14.12.2017
+
+ But         : Classe generale abstraite modélisant un annimal.
+ 			   La cohérence des données Regime, cri, pays est gérée 
+ 			   depuis cette classe.
+
+ Remarque(s) : 
+
+ Compilateur : jdk1.8.0_144
+ -----------------------------------------------------------------------------------
+ */
 
 import java.util.*;
 
 /**
- * 
+ *
  */
 public abstract class Animal {
 
-    /**
-     * Default constructor
-     */
-    public Animal() {
+    protected Animal() {
     }
 
-    /**
-     * 
-     */
     private String nom;
-
-    /**
-     * 
-     */
     private int poids;
-
-    /**
-     * 
-     */
     private Regime regime;
-
-    /**
-     * 
-     */
     private cri cri;
-
-    /**
-     * 
-     */
     private Set<Pays> pays;
-
-    /**
-     * 
-     */
     private Zoo zoo;
 
-    /**
-     * @return
-     */
     public String getNom() {
-        // TODO implement here
-        return "";
+        return nom;
     }
 
-    /**
-     * @param nom 
-     * @return
-     */
     public void setNom(String nom) {
-        // TODO implement here
-        return null;
+        this.nom = nom;
     }
 
-    /**
-     * @return
-     */
     public int getPoids() {
-        // TODO implement here
-        return 0;
+        return poids;
     }
 
-    /**
-     * @param poids 
-     * @return
-     */
     public void setPoids(int poids) {
-        // TODO implement here
-        return null;
+        this.poids = poids;
     }
-
 }

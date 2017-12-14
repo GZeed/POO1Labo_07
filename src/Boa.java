@@ -1,4 +1,18 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 06
+ Fichier     : Boa.java
+ Auteurs     : Yohann Meyer, Guillaume Zaretti
+ Date        : 14.12.2017
 
+ But         : Classe spécialisée modélisant un annimal boa.
+ 			  
+
+ Remarque(s) : 
+
+ Compilateur : jdk1.8.0_144
+ -----------------------------------------------------------------------------------
+ */
 import java.util.*;
 
 /**
@@ -6,42 +20,21 @@ import java.util.*;
  */
 public class Boa extends Animal {
 
-    /**
-     * Default constructor
-     */
     public Boa() {
     }
-
-    /**
-     * 
-     */
-    private double longeur;
-
-    /**
-     * 
-     */
-    private static Regime regimeDef;
-
-    /**
-     * 
-     */
-    private static double qteNouritureDef = 1.5;
-
-    /**
-     * @return
-     */
+    
     public double getLongeur() {
-        // TODO implement here
-        return 0.0d;
+        return this.longeur;
     }
 
-    /**
-     * @param longeur 
-     * @return
-     */
     public void seLongeur(double longeur) {
-        // TODO implement here
-        return null;
+        this.longeur = longeur;
     }
-
+    
+    public static void setRegimeDef(Regime regimeDef){
+        Boa.regimeDef = regimeDef;
+    }
+    
+    private double longeur;
+    private static Regime regimeDef = new Regime();
 }
