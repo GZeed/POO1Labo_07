@@ -31,7 +31,7 @@ public abstract class Animal {
     private cri cri;
     private Set<Pays> pays;
     private Zoo zoo;
-
+    
     public String getNom() {
         return nom;
     }
@@ -47,4 +47,60 @@ public abstract class Animal {
     public void setPoids(int poids) {
         this.poids = poids;
     }
+
+    public Regime getRegime() {
+        return this.regime;
+    }
+
+    public void setRegime(Regime regime) {
+        //this.regime = regime.clone();
+    }
+
+    public void setPays(Set<Pays> pays) {
+        this.pays.clear();
+        for (Pays p : pays) {
+            //this.pays = p.clone();   
+        }
+    }
+
+    public Set<Pays> getPays() {
+        return null; // pays.clone();
+    }
+
+    public Zoo getZoo() {
+        return null;//Zoo.clone();
+    }
+
+    public void setZoo(Zoo zoo) {
+        if (zoo != null) {
+            if (/*possedeZoo()*/false) {
+                // supprime de son ancien zoo
+                //this.zoo.supprimerAnnimal(this);
+            }
+            this.zoo = zoo;
+            //zoo.addAnnimal(this);
+        } else {
+            supprimerZoo();
+        }
+    }
+
+    void supprimerZoo() {
+        if (/*possedeZoo()*/false) {
+            //zoo.getAnnimals().remove(this);
+            zoo = null;
+        }
+    }
+
+    private boolean possedeZoo() {
+        return zoo != null;
+    }
+    
+    // Redéfinition de l'affichage de la classe
+	@Override
+	public String toString() {
+		if (!possedeZoo()) {
+			//return nom;
+		}
+		return "affichage";
+	}
 }

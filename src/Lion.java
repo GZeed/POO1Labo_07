@@ -23,5 +23,5 @@ public class Lion extends Animal {
         Lion.regimeDef = regimeDef;
     }
 
-    private static Regime regimeDef = new Regime();
+    private static Regime regimeDef = new Regime(/**/);
 }
