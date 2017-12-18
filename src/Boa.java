@@ -35,6 +35,16 @@ public class Boa extends Animal {
         Boa.regimeDef = regimeDef;
     }
     
+    // Redéfinition de l'affichage de la classe
+	@Override
+	public String toString() {
+            String string = super.toString();
+		if (!possedeZoo()) {
+			//return nom;
+		}
+		return "affichage";
+	}
+    
     private double longeur;
     private static Regime regimeDef = new Regime();
 }
