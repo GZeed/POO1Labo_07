@@ -15,27 +15,32 @@
 import java.util.*;
 
 /**
- * 
+ *
  */
 public class Chimpanze extends Animal {
 
+    //Constructeur minimal de la classe
     public Chimpanze() {
     }
 
-     public static void setRegimeDef(Regime regimeDef){
+    //Setter permettant de modifier le régime alimentaire attribué par défaut 
+    //à la création de l'annimal chimpanze
+    public static void setRegimeDef(Regime regimeDef) {
         Chimpanze.regimeDef = regimeDef;
     }
-    
-      // Redéfinition de l'affichage de la classe
-	@Override
-	public String toString() {
-            String string = super.toString();
-		if (!possedeZoo()) {
-			//return nom;
-		}
-		return "affichage";
-	}
 
-    private static Regime regimeDef = new Regime();
+    // Redéfinition de l'affichage de la classe
+    @Override
+    public String toString() {
+        String string = super.toString();
+        if (!possedeZoo()) {
+            //return nom;
+        }
+        return "affichage";
+    }
+
+
+    
+    private static Regime regimeDef = new Regime(/**/);
 
 }

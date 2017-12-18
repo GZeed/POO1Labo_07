@@ -16,22 +16,25 @@ import java.util.*;
  */
 public class Lion extends Animal {
 
+    //Constructeur minimal de la classe
     public Lion() {
     }
 
+    //Setter permettant de modifier le régime alimentaire attribué par défaut 
+    //à la création de l'annimal lion
     public static void setRegimeDef(Regime regimeDef) {
         Lion.regimeDef = regimeDef;
     }
-    
-     // Redéfinition de l'affichage de la classe
-	@Override
-	public String toString() {
-            String string = super.toString();
-		if (!possedeZoo()) {
-			string = getZoo().toString();
-		}
-		return "affichage";
-	}
+
+    // Redéfinition de l'affichage de la classe
+    @Override
+    public String toString() {
+        String string = super.toString();
+        if (!possedeZoo()) {
+            string = getZoo().toString();
+        }
+        return "affichage";
+    }
 
     private static Regime regimeDef = new Regime(/**/);
 }

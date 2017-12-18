@@ -16,13 +16,15 @@
 import java.util.*;
 
 /**
- * 
+ *
  */
 public class Boa extends Animal {
 
+    //Constructeur minimal de la classe
     public Boa() {
+        ;//regimeDef.clone();
     }
-    
+
     public double getLongeur() {
         return this.longeur;
     }
@@ -31,20 +33,22 @@ public class Boa extends Animal {
         this.longeur = longeur;
     }
     
-    public static void setRegimeDef(Regime regimeDef){
+    //Setter permettant de modifier le régime alimentaire attribué par défaut 
+    //à la création de l'annimal boa
+    public static void setRegimeDef(Regime regimeDef) {
         Boa.regimeDef = regimeDef;
     }
-    
+
     // Redéfinition de l'affichage de la classe
-	@Override
-	public String toString() {
-            String string = super.toString();
-		if (!possedeZoo()) {
-			//return nom;
-		}
-		return "affichage";
-	}
-    
+    @Override
+    public String toString() {
+        String string = super.toString();
+        if (!possedeZoo()) {
+            //return nom;
+        }
+        return "affichage";
+    }
+
     private double longeur;
-    private static Regime regimeDef = new Regime();
+    private static Regime regimeDef = new Regime(/**/);
 }
