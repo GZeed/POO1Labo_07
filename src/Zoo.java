@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------------
  Laboratoire : 06
  Fichier     : Zoo.java
- Auteurs     : Yohann Meyer, Guillaume Zaretti
+ Auteurs     : Yohan Meyer, Guillaume Zaretti
  Date        : 19.12.2017
 
  But         : Classe modélisant le zoo dans lequiel les animaux se trouvent.
@@ -46,23 +46,23 @@ public class Zoo {
         }
     }
 
-    //Ajoute l'annimal donné en parmètre	
-    public void ajouterAnimal(Animal annimal) {
-        if (!animaux.contains(annimal)) {
-            animaux.add(annimal);
+    //Ajoute l'animal donné en parmètre	
+    public void ajouterAnimal(Animal animal) {
+        if (!animaux.contains(animal)) {
+            animaux.add(animal);
         }
     }
 
-    //Supprime du zoo chaque annima(l/aux) donné(s) en paramètre.
+    //Supprime du zoo chaque anima(l/aux) donné(s) en paramètre.
     public void supprimerAnimal(Animal... animaux) {
         for (Animal a : animaux) {
             supprimerAnimal(a);
         }
     }
 
-    //Supprime du zoo chaque annimal donné en paramètre	
-    public void supprimerAnimal(Animal annimal) {
-        animaux.remove(annimal);
+    //Supprime du zoo chaque animal donné en paramètre	
+    public void supprimerAnimal(Animal animal) {
+        animaux.remove(animal);
     }
 
     private String nom;
