@@ -1,4 +1,18 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 06
+ Fichier     : Nourriture.java
+ Auteurs     : Yohann Meyer, Guillaume Zaretti
+ Date        : 19.12.2017
 
+ But         : Classe modélisant la nouriture faisant parti du régime des annimaux.
+ 			   
+
+ Remarque(s) : 
+
+ Compilateur : jdk1.8.0_144
+ -----------------------------------------------------------------------------------
+ */
 import java.util.*;
 
 /**
