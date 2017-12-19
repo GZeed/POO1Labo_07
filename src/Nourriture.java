@@ -15,66 +15,32 @@
  */
 import java.util.*;
 
-/**
- * 
- */
 public class Nourriture {
 
-    /**
-     * Default constructor
-     */
-    public Nourriture() {
+    // Constructeur minimal
+    public Nourriture(String nom, double prixAnnuel) {
     }
 
-    /**
-     * 
-     */
-    private String nom;
-
-    /**
-     * 
-     */
-    private double prixAnnuel;
-
-    /**
-     * @param nom
-     */
-    public void Nourriture(String nom) {
-        // TODO implement here
-    }
-
-    /**
-     * @return
-     */
+    // Getter du nom de la nourriture
     public String getNom() {
-        // TODO implement here
-        return "";
+        return nom;
     }
 
-    /**
-     * @param nom 
-     * @return
-     */
+    // Setter du nom de la nourriture
     public void setNom(String nom) {
-        // TODO implement here
-        return null;
+        this.nom = nom;
     }
 
-    /**
-     * @return
-     */
+    // Getter du prix annuel de la nourriture
     public double getPrixAnnuel() {
-        // TODO implement here
-        return 0.0d;
+       return prixAnnuel;
     }
 
-    /**
-     * @param prixAnnuel 
-     * @return
-     */
+    // Setter du prix annuel de la nourriture
     public void setPrixAnnuel(double prixAnnuel) {
-        // TODO implement here
-        return null;
+        this.prixAnnuel = prixAnnuel;
     }
 
+    private String nom;
+    private double prixAnnuel;
 }

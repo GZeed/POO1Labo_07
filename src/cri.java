@@ -18,14 +18,16 @@ import java.util.*;
 
 public class cri {
 
+    // Constructeur minimal
     public cri(String nom) {
         this.nom = nom;
     }
 
+    // Getter du cris de l'animal
     public String getCri() {
         return nom;
     }
-
+    // Setter du cris de l'animal
     public void setCri(String nom) {
         this.nom = nom;
     }
