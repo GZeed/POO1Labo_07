@@ -15,37 +15,23 @@
  */
 import java.util.*;
 
-/**
- * 
- */
 public class Pays {
 
-    /**
-     * Default constructor
-     */
-    public Pays() {
+    // Constructeur minimal
+    public Pays(String nom) {
+        this.nom = nom;
     }
 
-    /**
-     * 
-     */
-    private String nom;
-
-    /**
-     * @return
-     */
+    // Getteur pour le nom du pays
     public String getNom() {
-        // TODO implement here
-        return "";
+        return nom;
     }
 
-    /**
-     * @param nom 
-     * @return
-     */
+    // Setteur pour le nom du pays
     public void setNom(String nom) {
-        // TODO implement here
-        return null;
+        this.nom = nom;
     }
+
+    private String nom;
 
 }

@@ -41,6 +41,7 @@ public class Regime {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
     //Ajoute une ou plusieurs nouritures donné(s) en paramètre au régimes courant
     /*public void ajouterNourritures(Nourriture... nouritures){
          for (Nourriture n : nouritures) {
@@ -49,29 +50,28 @@ public class Regime {
     }*/
 
     //Ajoute une nouritures donné en paramètre au régimes courant
-    public void ajouterNourriture(Nourriture nourriture, double quantitee){
+    public void ajouterNourriture(Nourriture nourriture, double quantitee) {
         if (!nourritures.contains(nourriture)) {
             nourritures.add(nourriture);
             mapQteNourriture.put(nourriture, quantitee);
-        }    
+        }
     }
-    
+
     /*public void supprimerNourritures(Nourriture... nouritures){  
     }*/
-
     //Supprimer une nouritures donné en paramètre au régimes courant
-    public void supprimerNourriture(Nourriture nourriture, double quantitee){
+    public void supprimerNourriture(Nourriture nourriture, double quantitee) {
         nourritures.remove(nourriture);
         mapQteNourriture.remove(nourriture);
     }
-    
+
     //Modifier une nouritures donné en paramètre au régimes courant
-    public void modifierQuantiteeNourriture(Nourriture nourriture, double quantitee){
-         if (nourritures.contains(nourriture)) {
+    public void modifierQuantiteeNourriture(Nourriture nourriture, double quantitee) {
+        if (nourritures.contains(nourriture)) {
             mapQteNourriture.put(nourriture, quantitee);
-        }  
+        }
     }
-    
+
     private String nom;
     private Map<Nourriture, Double> mapQteNourriture;
     private Set<Nourriture> nourritures;
