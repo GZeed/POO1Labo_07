@@ -50,5 +50,5 @@ public class Boa extends Animal {
     }
 
     private double longeur;
-    private static Regime regimeDef = new Regime(/**/);
+    private static Regime regimeDef = new Regime("carnivor", new Set<Nourriture>() );
 }
