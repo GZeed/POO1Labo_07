@@ -23,34 +23,57 @@ public class Regime {
     }
 
     // Contructeur
-    public Regime(String nom, Map<Nourriture,
-             Set<Nourriture> nour,
-            Double>  gteNourriture) {
+    public Regime(String nom,
+            Set<Nourriture> nourritures,
+            Map<Nourriture, Double> qteNourriture) {
+        this.nom = nom;
+        this.nourritures = nourritures;
+        this.mapQteNourriture = qteNourriture;
 
     }
 
+    // Getter du nom du régime
     public String getNom() {
-        // TODO implement here
-        return null;
+        return nom;
     }
 
+    // Setter du nom du régime
     public void setNom(String nom) {
-        // TODO implement here
-        return null;
+        this.nom = nom;
     }
+    //Ajoute une ou plusieurs nouritures donné(s) en paramètre au régimes courant
+    /*public void ajouterNourritures(Nourriture... nouritures){
+         for (Nourriture n : nouritures) {
+            ajouterNourriture(n);
+        }
+    }*/
 
-    public double getQteNourriture() {
-        // TODO implement here
-        return 0.0d;
+    //Ajoute une nouritures donné en paramètre au régimes courant
+    public void ajouterNourriture(Nourriture nourriture, double quantitee){
+        if (!nourritures.contains(nourriture)) {
+            nourritures.add(nourriture);
+            mapQteNourriture.put(nourriture, quantitee);
+        }    
     }
+    
+    /*public void supprimerNourritures(Nourriture... nouritures){  
+    }*/
 
-    public void setQteNourriture(double qteNourriture) {
-        // TODO implement here
-        return null;
+    //Supprimer une nouritures donné en paramètre au régimes courant
+    public void supprimerNourriture(Nourriture nourriture, double quantitee){
+        nourritures.remove(nourriture);
+        mapQteNourriture.remove(nourriture);
     }
-
+    
+    //Modifier une nouritures donné en paramètre au régimes courant
+    public void modifierQuantiteeNourriture(Nourriture nourriture, double quantitee){
+         if (nourritures.contains(nourriture)) {
+            mapQteNourriture.put(nourriture, quantitee);
+        }  
+    }
+    
     private String nom;
-    private Map<Nourriture, Double> qteNourriture;
+    private Map<Nourriture, Double> mapQteNourriture;
     private Set<Nourriture> nourritures;
 
 }

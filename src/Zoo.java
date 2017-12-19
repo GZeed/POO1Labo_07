@@ -25,7 +25,7 @@ public class Zoo {
     // Contructeur
     public Zoo(String nom, Animal... animaux) {
         this.nom = nom;
-        ajouterAnimal(animaux);
+        ajouterAnimaux(animaux);
     }
 
     //Getter du nom du zoo
@@ -40,7 +40,7 @@ public class Zoo {
     }
 
     //Ajoute un ou plusieurs animaux donné(s) en paramètre au zoo courant
-    public void ajouterAnimal(Animal... animaux) {
+    public void ajouterAnimaux(Animal... animaux) {
         for (Animal animal : animaux) {
             ajouterAnimal(animal);
         }
@@ -50,17 +50,18 @@ public class Zoo {
     public void ajouterAnimal(Animal animal) {
         if (!animaux.contains(animal)) {
             animaux.add(animal);
+            
         }
     }
 
     //Supprime du zoo chaque anima(l/aux) donné(s) en paramètre.
-    public void supprimerAnimal(Animal... animaux) {
+    public void supprimerAnimaux(Animal... animaux) {
         for (Animal a : animaux) {
             supprimerAnimal(a);
         }
     }
 
-    //Supprime du zoo chaque animal donné en paramètre	
+    //Supprime du zoo l'animal donné en paramètre	
     public void supprimerAnimal(Animal animal) {
         animaux.remove(animal);
     }
