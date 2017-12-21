@@ -41,6 +41,7 @@ public class Chimpanze extends Animal {
 
 
     
-    private static Regime regimeDef = new Regime(/**/);
+    private static Regime regimeDef = new Regime("carnivor",
+            new HashSet<Nourriture>(), new HashMap<Nourriture, Double>());
 
 }

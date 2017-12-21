@@ -50,7 +50,7 @@ public class Zoo {
     public void ajouterAnimal(Animal animal) {
         if (!animaux.contains(animal)) {
             animaux.add(animal);
-            
+
         }
     }
 
@@ -65,6 +65,8 @@ public class Zoo {
     public void supprimerAnimal(Animal animal) {
         animaux.remove(animal);
     }
+
+  
 
     private String nom;
     private Set<Animal> animaux;

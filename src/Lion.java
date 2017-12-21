@@ -1,3 +1,7 @@
+
+import java.util.HashMap;
+import java.util.HashSet;
+
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : 06
@@ -36,5 +40,6 @@ public class Lion extends Animal {
         return "affichage";
     }
 
-    private static Regime regimeDef = new Regime(/**/);
+    private static Regime regimeDef = new Regime("carnivor",
+            new HashSet<Nourriture>(), new HashMap<Nourriture, Double>());
 }

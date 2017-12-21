@@ -25,10 +25,12 @@ public class Boa extends Animal {
         ;//regimeDef.clone();
     }
 
+    //Getteur de la longeur du Boa
     public double getLongeur() {
         return this.longeur;
     }
 
+    //Setteur de la longeur du boa
     public void seLongeur(double longeur) {
         this.longeur = longeur;
     }
@@ -50,5 +52,6 @@ public class Boa extends Animal {
     }
 
     private double longeur;
-    private static Regime regimeDef = new Regime("carnivor", new Set<Nourriture>() );
+    private static Regime regimeDef = new Regime("carnivor",
+            new HashSet<Nourriture>(), new HashMap<Nourriture, Double>());
 }
