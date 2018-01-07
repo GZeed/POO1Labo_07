@@ -21,7 +21,8 @@ import java.util.*;
 public class Lion extends Animal {
 
     //Constructeur minimal de la classe
-    public Lion() {
+    public Lion(String nom, int poids) {
+        super(nom, poids);
     }
 
     //Setter permettant de modifier le régime alimentaire attribué par défaut 

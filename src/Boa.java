@@ -21,8 +21,9 @@ import java.util.*;
 public class Boa extends Animal {
 
     //Constructeur minimal de la classe
-    public Boa() {
-        ;//regimeDef.clone();
+    public Boa(String nom, int poids, double longueur) {
+        super(nom, poids);//regimeDef.clone();
+        this.longeur = longeur;
     }
 
     //Getteur de la longeur du Boa

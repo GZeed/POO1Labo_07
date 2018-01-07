@@ -20,7 +20,9 @@ import java.util.*;
 public class Chimpanze extends Animal {
 
     //Constructeur minimal de la classe
-    public Chimpanze() {
+    public Chimpanze(String nom, int poids) {
+        super(nom, poids);
+        
     }
 
     //Setter permettant de modifier le régime alimentaire attribué par défaut 

@@ -23,7 +23,7 @@ import java.util.*;
 public abstract class Animal {
 
     //Constructeur minimal de la classe
-    protected Animal() {
+    protected Animal(String nom, int poids) {
     }
 
     private String nom;
