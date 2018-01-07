@@ -5,7 +5,7 @@
  Auteurs     : Yohann Meyer, Guillaume Zaretti
  Date        : 14.12.2017
 
- But         : Classe generale abstraite modélisant un annimal.
+ But         : Classe generale abstraite modélisant un animal.
  			   La cohérence des données Regime, cri, pays est gérée 
  			   depuis cette classe.
 
@@ -38,67 +38,64 @@ public abstract class Animal {
         return nom;
     }
 
-    //Setter du nom de l'annimal 
+    //Setter du nom de l'animal 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    //Getter du poids de l'annimal 
+    //Getter du poids de l'animal 
     public int getPoids() {
         return poids;
     }
 
-    //Setter du poids de l'annimal 
+    //Setter du poids de l'animal 
     public void setPoids(int poids) {
         this.poids = poids;
     }
 
-    //Getter du regime de l'annimal 
+    //Getter du regime de l'animal 
     public Regime getRegime() {
-        return this.regime;
+        return this.regime; // regime.clone() ; ?
     }
 
-    //Setter du regime de l'annimal 
+    //Setter du regime de l'animal 
     public void setRegime(Regime regime) {
-        //this.regime = regime.clone();
+        this.regime = regime; //regime.clone(); ?
     }
 
-    //Setter du nom de l'annimal 
+    //Setter du pays de provenance de l'animal 
     public void setPays(Set<Pays> pays) {
-        this.pays.clear();
-        for (Pays p : pays) {
-            //this.pays = p.clone();   
-        }
+        this.pays = pays; //pays.clone();        
     }
 
-    //Getter des pays de provenance de l'annimal 
+    //Getter des pays de provenance de l'animal 
     public Set<Pays> getPays() {
         return pays; // pays.clone();
     }
 
-    //Getter du zoo de l'annimal 
+    //Getter du zoo de l'animal 
     public Zoo getZoo() {
         return zoo;//Zoo.clone();
     }
 
-    //Setter du zoo au quel appartiens l'annimal 
+    //Setter du zoo au quel appartiens l'animal 
     public void setZoo(Zoo zoo) {
         if (zoo != null) {
-            if (/*possedeZoo()*/false) {
-                // supprime de son ancien zoo
-                //this.zoo.supprimerAnnimal(this);
+            if (possedeZoo()) {
+                //supprime de son ancien zoo
+                this.zoo.supprimerAnimal(this);
             }
             this.zoo = zoo;
-            //zoo.addAnnimal(this);
+            zoo.ajouterAnimal(this);
         } else {
             supprimerZoo();
         }
     }
 
-    //Le sortir du zoo 
+    //Sortir l'animal du zoo 
     void supprimerZoo() {
-        if (/*possedeZoo()*/false) {
-            //zoo.getAnnimals().remove(this);
+        if (possedeZoo()) {
+            zoo.supprimerAnimal(this);
             zoo = null;
         }
     }
@@ -125,7 +122,7 @@ public abstract class Animal {
         this.pays.clear();
     }
 
-    //Vérifie si l'annimal se trouve dans un zoo
+    //Vérifie si l'animal se trouve dans un zoo
     protected boolean possedeZoo() {
         return zoo != null;
     }
