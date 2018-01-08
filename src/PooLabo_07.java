@@ -34,6 +34,8 @@ public class PooLabo_07 {
         zooTycoon.supprimerAnimal(annimaux[3]);
         
         zooTycoon.afficheByEspeces();
+        
+        
     }
     
     

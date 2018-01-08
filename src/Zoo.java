@@ -71,4 +71,8 @@ public class Zoo {
     private String nom;
     private Set<Animal> animaux;
 
+    void afficheByEspeces() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
