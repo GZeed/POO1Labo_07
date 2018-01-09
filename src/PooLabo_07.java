@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -21,17 +22,24 @@ public class PooLabo_07 {
 
       
         
-        Animal annimaux[] = {new Chimpanze("Chita", 15),
+        Animal animaux[] = {new Chimpanze("Chita", 15),
             new Chimpanze("Banana", 10),
             new Lion("Clarence", 150),
             new Boa("Kaa", 10, 3),
             new Boa("Gloups", 12, 2.5)};
 
-        zooTycoon.ajouterAnimaux(annimaux);
-        
-        zooTycoon.afficheByEspeces();
-        
-        zooTycoon.supprimerAnimal(annimaux[3]);
+
+        Lion l = new Lion("Clarence", 150);
+        ArrayList<Pays> k = l.getPays();
+
+        zooTycoon.ajouterAnimaux(animaux);
+
+
+        zooTycoon.affiche();
+
+        zooTycoon.afficheProvenance();
+        zooTycoon.afficheResume();
+        zooTycoon.supprimerAnimaux(animaux[3]);
         
         zooTycoon.afficheByEspeces();
         

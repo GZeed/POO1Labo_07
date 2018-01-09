@@ -21,10 +21,35 @@ import java.util.*;
 public class Boa extends Animal {
 
     //Constructeur minimal de la classe
-    public Boa(String nom, int poids, double longueur) {
+    public Boa(String nom, int poids, double l) {
         super(nom, poids);//regimeDef.clone();
-        this.longeur = longeur;
+        this.longeur = l;
+
     }
+
+    //Getter des pays de provenance de l'animal
+    public ArrayList<Pays> getPays() {
+        return Boa.provenance; // pays.clone();
+    }
+
+    public  void setCri(Cri cri){
+        Boa.cri = cri;
+    }
+
+    public  Cri getCri(){
+        return Boa.cri;
+    }
+    //Getter du regime de l'animal
+    public  Regime getRegime() {
+        return Boa.regime; // regime.clone() ; ?
+    }
+
+    //Setter du pays de provenance de l'animal
+    public  void setPays(ArrayList<Pays> pays) {
+        Boa.provenance = pays; //pays.clone();
+    }
+
+
 
     //Getteur de la longeur du Boa
     public double getLongeur() {
@@ -32,27 +57,35 @@ public class Boa extends Animal {
     }
 
     //Setteur de la longeur du boa
-    public void seLongeur(double longeur) {
+    public void setLongeur(double longeur) {
         this.longeur = longeur;
     }
     
     //Setter permettant de modifier le régime alimentaire attribué par défaut 
     //à la création de l'annimal boa
-    public static void setRegimeDef(Regime regimeDef) {
-        Boa.regimeDef = regimeDef;
+    public  void setRegime(Regime regime) {
+        Boa.regime = regime;
     }
+
 
     // Redéfinition de l'affichage de la classe
     @Override
     public String toString() {
-        String string = super.toString();
-        if (!possedeZoo()) {
-            //return nom;
-        }
-        return "affichage";
+        String str = super.toString();
+        str += ", " + longeur;
+        return str;
     }
 
     private double longeur;
-    private static Regime regimeDef = new Regime("carnivor",
-            new HashSet<Nourriture>(), new HashMap<Nourriture, Double>());
+
+    private static Regime regime = new Regime("carnivore",
+                    new HashMap<Nourriture, Double>(){{
+                        put(NourritureType.viande,1.5);
+                    }}
+    );
+    private static Cri cri = CriType.sifflement;
+    private static ArrayList<Pays> provenance = new ArrayList<Pays>(){{
+        add(PaysType.Mexique);
+        add(PaysType.Guatemala);
+    }};
 }

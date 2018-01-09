@@ -19,6 +19,8 @@ public class Nourriture {
 
     // Constructeur minimal
     public Nourriture(String nom, double prixAnnuel) {
+        this.nom = nom;
+        this.prixAnnuel = prixAnnuel;
     }
 
     // Getter du nom de la nourriture
@@ -39,6 +41,12 @@ public class Nourriture {
     // Setter du prix annuel de la nourriture
     public void setPrixAnnuel(double prixAnnuel) {
         this.prixAnnuel = prixAnnuel;
+    }
+
+
+    @Override
+    public String toString() {
+        return nom;
     }
 
     private String nom;

@@ -19,16 +19,14 @@ public class Regime {
 
     // Constructeur minimal
     public Regime(String nom) {
-
+        this.nom = nom;
     }
 
     // Contructeur
-    public Regime(String nom,
-            Set<Nourriture> nourritures,
-            Map<Nourriture, Double> qteNourriture) {
+    public Regime(String nom, HashMap<Nourriture, Double> quantites) {
+
         this.nom = nom;
-        this.nourritures = nourritures;
-        this.mapQteNourriture = qteNourriture;
+        this.quantites = quantites;
 
     }
 
@@ -42,38 +40,40 @@ public class Regime {
         this.nom = nom;
     }
 
-    //Ajoute une ou plusieurs nouritures donné(s) en paramètre au régimes courant
-    /*public void ajouterNourritures(Nourriture... nouritures){
-         for (Nourriture n : nouritures) {
-            ajouterNourriture(n);
-        }
-    }*/
 
     //Ajoute une nouritures donné en paramètre au régimes courant
-    public void ajouterNourriture(Nourriture nourriture, double quantitee) {
-        if (!nourritures.contains(nourriture)) {
-            nourritures.add(nourriture);
-            mapQteNourriture.put(nourriture, quantitee);
+    public void addNourr(Nourriture nourriture, double quantite) {
+        if (!quantites.containsKey(nourriture)) {
+            quantites.put(nourriture, quantite);
         }
     }
 
     /*public void supprimerNourritures(Nourriture... nouritures){  
     }*/
     //Supprimer une nouritures donné en paramètre au régimes courant
-    public void supprimerNourriture(Nourriture nourriture, double quantitee) {
-        nourritures.remove(nourriture);
-        mapQteNourriture.remove(nourriture);
+    public void supprimerNourriture(Nourriture nourriture) {
+        quantites.remove(nourriture);
     }
 
     //Modifier une nouritures donné en paramètre au régimes courant
-    public void modifierQuantiteeNourriture(Nourriture nourriture, double quantitee) {
-        if (nourritures.contains(nourriture)) {
-            mapQteNourriture.put(nourriture, quantitee);
+    public void modifierQuantiteeNourriture(Nourriture nourriture, double quantite) {
+        quantites.put(nourriture, quantite);
+    }
+
+    // Redéfinition de l'affichage de la classe
+    @Override
+    public String toString() {
+        String str = nom + ": " ;
+        for(Nourriture n : quantites.keySet()){
+            str += n.toString() + " " + quantites.get(n) + "kg ";
         }
+        return str;
     }
 
     private String nom;
-    private Map<Nourriture, Double> mapQteNourriture;
-    private Set<Nourriture> nourritures;
+    private Map<Nourriture, Double> quantites;
+
+
+
 
 }

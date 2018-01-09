@@ -1,11 +1,11 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : 06
- Fichier     : Pays.java
+ Fichier     : Regime.java
  Auteurs     : Yohann Meyer, Guillaume Zaretti
  Date        : 19.12.2017
 
- But         : Classe modélisant le pays de provenances des annimaux.
+ But         : Classe modélisant les cris des annimaux.
  			   
 
  Remarque(s) : 
@@ -15,23 +15,23 @@
  */
 import java.util.*;
 
-public class Pays {
+
+public class Cri {
 
     // Constructeur minimal
-    public Pays(String nom) {
+    public Cri(String nom) {
         this.nom = nom;
     }
 
-    // Getteur pour le nom du pays
-    public String getNom() {
+    // Getter du cri de l'animal
+    public String getCri() {
         return nom;
     }
-
-    // Setteur pour le nom du pays
-    public void setNom(String nom) {
+    // Setter du cri de l'animal
+    public void setCri(String nom) {
         this.nom = nom;
     }
-
+    
     private String nom;
 
     @Override

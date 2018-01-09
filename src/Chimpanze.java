@@ -22,28 +22,51 @@ public class Chimpanze extends Animal {
     //Constructeur minimal de la classe
     public Chimpanze(String nom, int poids) {
         super(nom, poids);
-        
+
+
     }
 
     //Setter permettant de modifier le régime alimentaire attribué par défaut 
-    //à la création de l'annimal chimpanze
-    public static void setRegimeDef(Regime regimeDef) {
-        Chimpanze.regimeDef = regimeDef;
+    //à la création de l'animal chimpanze
+    public  void setRegime(Regime regime) {
+        Chimpanze.regime = regime;
     }
 
     // Redéfinition de l'affichage de la classe
     @Override
     public String toString() {
-        String string = super.toString();
-        if (!possedeZoo()) {
-            //return nom;
-        }
-        return "affichage";
+        return super.toString();
     }
 
 
-    
-    private static Regime regimeDef = new Regime("carnivor",
-            new HashSet<Nourriture>(), new HashMap<Nourriture, Double>());
+    public  void setCri(Cri cri){
+        Chimpanze.cri = cri;
+    }
 
+    public  Cri getCri(){
+        return Chimpanze.cri;
+    }
+    //Getter du regime de l'animal
+    public  Regime getRegime() {
+        return Chimpanze.regime; // regime.clone() ; ?
+    }
+
+
+
+    //Getter des pays de provenance de l'animal
+    public  ArrayList<Pays> getPays() {
+        return Chimpanze.provenance; // pays.clone();
+    }
+
+    private static Regime regime = new Regime("carnivore",
+            new HashMap<Nourriture, Double>(){{
+                put(NourritureType.fruit,3.5);
+            }}
+    );
+    private static Cri cri = CriType.hurlement;
+    private static ArrayList<Pays> provenance = new ArrayList<Pays>(){{
+        add(PaysType.Liberia);
+        add(PaysType.Congo);
+        add(PaysType.Cameroun);
+    }};
 }

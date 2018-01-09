@@ -22,16 +22,19 @@ import java.util.*;
  */
 public abstract class Animal {
 
+    protected String nom;
+    protected int poids;
+
+    protected  Regime regime;
+    protected  Cri cri;
+    protected  ArrayList<Pays> provenance;
+
     //Constructeur minimal de la classe
     protected Animal(String nom, int poids) {
+        this.nom = nom;
+        this.poids = poids;
     }
 
-    private String nom;
-    private int poids;
-    private Regime regime;
-    private cri cri;
-    private Set<Pays> pays;
-    private Zoo zoo;
 
     //Getter du nom de l'animal
     public String getNom() {
@@ -53,59 +56,41 @@ public abstract class Animal {
         this.poids = poids;
     }
 
+
+    public  void setCri(Cri cri){
+        this.cri = cri;
+    }
+
+    public  Cri getCri(){
+        return this.cri;
+    }
     //Getter du regime de l'animal 
-    public Regime getRegime() {
+    public  Regime getRegime() {
         return this.regime; // regime.clone() ; ?
     }
 
+
     //Setter du regime de l'animal 
-    public void setRegime(Regime regime) {
+    public  void setRegime(Regime regime) {
         this.regime = regime; //regime.clone(); ?
     }
 
     //Setter du pays de provenance de l'animal 
-    public void setPays(Set<Pays> pays) {
-        this.pays = pays; //pays.clone();        
+    public  void setPays(ArrayList<Pays> pays) {
+        this.provenance = pays; //pays.clone();
     }
 
-    //Getter des pays de provenance de l'animal 
-    public Set<Pays> getPays() {
-        return pays; // pays.clone();
-    }
-
-    //Getter du zoo de l'animal 
-    public Zoo getZoo() {
-        return zoo;//Zoo.clone();
-    }
-
-    //Setter du zoo au quel appartiens l'animal 
-    public void setZoo(Zoo zoo) {
-        if (zoo != null) {
-            if (possedeZoo()) {
-                //supprime de son ancien zoo
-                this.zoo.supprimerAnimal(this);
-            }
-            this.zoo = zoo;
-            zoo.ajouterAnimal(this);
-        } else {
-            supprimerZoo();
-        }
-    }
-
-    //Sortir l'animal du zoo 
-    void supprimerZoo() {
-        if (possedeZoo()) {
-            zoo.supprimerAnimal(this);
-            zoo = null;
-        }
+    //Getter des pays de provenance de l'animal
+    public  ArrayList<Pays> getPays() {
+        return this.provenance; // pays.clone();
     }
 
     //Ajoute une ou plusieurs provenances donné(s) en paramètre
     public void ajouterProvenance(Pays... pays) {
 
         for (Pays p : pays) {
-            if (!this.pays.contains(p)) {
-                this.pays.add(p);
+            if (!this.provenance.contains(p)) {
+                this.provenance.add(p);
             }
         }
     }
@@ -113,26 +98,20 @@ public abstract class Animal {
     //Suprimmer une ou plusieurs provennances donné(s) en paramètre 
     public void supprimerProvenance(Pays... pays) {
         for (Pays p : pays) {
-            this.pays.remove(pays);
+            this.provenance.remove(p);
         }
     }
     
     //Supprimer toutes les provenances
     public void supprimerToutesProvenances(){
-        this.pays.clear();
+        this.provenance.clear();
     }
 
-    //Vérifie si l'animal se trouve dans un zoo
-    protected boolean possedeZoo() {
-        return zoo != null;
-    }
 
     // Redéfinition de l'affichage de la classe
     @Override
     public String toString() {
-        if (!possedeZoo()) {
-            //return nom;
-        }
-        return "affichage";
+        return "\"" + this.nom  + "\", " + this.poids + "kg";
+
     }
 }
