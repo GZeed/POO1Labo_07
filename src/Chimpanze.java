@@ -54,7 +54,7 @@ public class Chimpanze extends Animal {
         return Chimpanze.provenance;
     }
 
-    private static Regime regime = new Regime("carnivore",
+    private static Regime regime = new Regime("végétarien",
             new HashMap<Nourriture, Double>() {
         {
             put(NourritureType.FRUIT, 3.5);

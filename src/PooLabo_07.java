@@ -36,13 +36,25 @@ public class PooLabo_07 {
         zooTycoon.ajouterAnimaux(animaux);
 
         zooTycoon.affiche();
+        zooTycoon.supprimerAnimaux(animaux[3]);
 
         zooTycoon.afficheProvenance();
         zooTycoon.afficheResume();
-        System.out.print(zooTycoon.cout());
-        zooTycoon.supprimerAnimaux(animaux[3]);
+        System.out.println("cout " + zooTycoon.cout());
 
-    
+        /*==============TESTS===========*/
+
+        //1 : Modification de la quantité de fruits mangés par les chimpanzés.
+        System.out.println( "Chita : " + zooTycoon.getAnimaux().get(0).getRegime().toString() );
+        System.out.println("Modification...");
+        //possible uniquement parce que l'encapsulation n'est pas respectée. (à l'aide de clone() )
+        zooTycoon.getAnimaux().get(0).getRegime().setQuantites(NourritureType.FRUIT, 1);
+        System.out.println( "Chita : " + zooTycoon.getAnimaux().get(0).getRegime().toString() );
+        System.out.println( "Banana: "+ zooTycoon.getAnimaux().get(1).getRegime().toString() );
+
+        //2: Changement du poids (après régime) de Chita
+        zooTycoon.getAnimaux().get(0).setPoids(10);
+        System.out.println("Chita: " + zooTycoon.getAnimaux().get(0).getPoids() +"kg");
 
     }
 

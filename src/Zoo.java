@@ -95,8 +95,9 @@ public class Zoo {
 
         for (Animal a : animaux) {
             str += a.toString()
-                    + a.getPays().toString()
-                    + a.getRegime().toString() + "\n";
+                    +" " + a.getPays().toString()
+                    + " " +a.getRegime().toString()
+                    + " " + a.getCri().toString() + "\n";
         }
         System.out.println(str);
     }
@@ -125,6 +126,11 @@ public class Zoo {
         }
         return liste;
     }
+
+    public ArrayList<Animal> getAnimaux() {
+        return animaux;
+    }
+
 
     private String nom;
     private ArrayList<Animal> animaux = new ArrayList<Animal>();

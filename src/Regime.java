@@ -42,9 +42,8 @@ public class Regime {
 
     //Ajoute une nouritures donné en paramètre au régimes courant
     public void setQuantites(Nourriture nourriture, double quantite) {
-        if (!quantites.containsKey(nourriture)) {
             quantites.put(nourriture, quantite);
-        }
+
     }
 
     //Supprimer une nouritures donné en paramètre au régimes courant
