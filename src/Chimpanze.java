@@ -1,6 +1,6 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 06
+ Laboratoire : 07
  Fichier     : Chimpanze.java
  Auteurs     : Yohann Meyer, Guillaume Zaretti
  Date        : 14.12.2017
@@ -14,21 +14,17 @@
  */
 import java.util.*;
 
-/**
- *
- */
 public class Chimpanze extends Animal {
 
     //Constructeur minimal de la classe
     public Chimpanze(String nom, int poids) {
         super(nom, poids);
 
-
     }
 
     //Setter permettant de modifier le régime alimentaire attribué par défaut 
     //à la création de l'animal chimpanze
-    public  void setRegime(Regime regime) {
+    public void setRegime(Regime regime) {
         Chimpanze.regime = regime;
     }
 
@@ -38,35 +34,39 @@ public class Chimpanze extends Animal {
         return super.toString();
     }
 
-
-    public  void setCri(Cri cri){
+    // Setter permettant de modifier le cri de l'animal
+    public void setCri(Cri cri) {
         Chimpanze.cri = cri;
     }
 
-    public  Cri getCri(){
+    // Getter permettant de retrouner le cri de l'animal
+    public Cri getCri() {
         return Chimpanze.cri;
     }
+
     //Getter du regime de l'animal
-    public  Regime getRegime() {
-        return Chimpanze.regime; // regime.clone() ; ?
+    public Regime getRegime() {
+        return Chimpanze.regime;
     }
 
-
-
     //Getter des pays de provenance de l'animal
-    public  ArrayList<Pays> getPays() {
-        return Chimpanze.provenance; // pays.clone();
+    public ArrayList<Pays> getPays() {
+        return Chimpanze.provenance;
     }
 
     private static Regime regime = new Regime("carnivore",
-            new HashMap<Nourriture, Double>(){{
-                put(NourritureType.fruit,3.5);
-            }}
+            new HashMap<Nourriture, Double>() {
+        {
+            put(NourritureType.FRUIT, 3.5);
+        }
+    }
     );
-    private static Cri cri = CriType.hurlement;
-    private static ArrayList<Pays> provenance = new ArrayList<Pays>(){{
-        add(PaysType.Liberia);
-        add(PaysType.Congo);
-        add(PaysType.Cameroun);
-    }};
+    private static Cri cri = CriType.HURLEMENT;
+    private static ArrayList<Pays> provenance = new ArrayList<Pays>() {
+        {
+            add(PaysType.LIBERIA);
+            add(PaysType.CONGO);
+            add(PaysType.CAMEROUN);
+        }
+    };
 }

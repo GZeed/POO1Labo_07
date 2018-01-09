@@ -1,6 +1,6 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 06
+ Laboratoire : 07
  Fichier     : Annimal.java
  Auteurs     : Yohann Meyer, Guillaume Zaretti
  Date        : 14.12.2017
@@ -18,23 +18,22 @@
 import java.util.*;
 
 /**
- *Classe Animal
+ * Classe Animal
  */
 public abstract class Animal {
 
     protected String nom;
     protected int poids;
 
-    protected  Regime regime;
-    protected  Cri cri;
-    protected  ArrayList<Pays> provenance;
+    protected Regime regime;
+    protected Cri cri;
+    protected ArrayList<Pays> provenance;
 
     //Constructeur minimal de la classe
     protected Animal(String nom, int poids) {
         this.nom = nom;
         this.poids = poids;
     }
-
 
     //Getter du nom de l'animal
     public String getNom() {
@@ -56,32 +55,33 @@ public abstract class Animal {
         this.poids = poids;
     }
 
-
-    public  void setCri(Cri cri){
+    //Setter permettant de modifier le cri de l'animal
+    public void setCri(Cri cri) {
         this.cri = cri;
     }
 
-    public  Cri getCri(){
+    //Getter permettant de retourner le cri de l'animal
+    public Cri getCri() {
         return this.cri;
     }
+
     //Getter du regime de l'animal 
-    public  Regime getRegime() {
+    public Regime getRegime() {
         return this.regime; // regime.clone() ; ?
     }
 
-
     //Setter du regime de l'animal 
-    public  void setRegime(Regime regime) {
+    public void setRegime(Regime regime) {
         this.regime = regime; //regime.clone(); ?
     }
 
     //Setter du pays de provenance de l'animal 
-    public  void setPays(ArrayList<Pays> pays) {
+    public void setPays(ArrayList<Pays> pays) {
         this.provenance = pays; //pays.clone();
     }
 
     //Getter des pays de provenance de l'animal
-    public  ArrayList<Pays> getPays() {
+    public ArrayList<Pays> getPays() {
         return this.provenance; // pays.clone();
     }
 
@@ -101,17 +101,16 @@ public abstract class Animal {
             this.provenance.remove(p);
         }
     }
-    
+
     //Supprimer toutes les provenances
-    public void supprimerToutesProvenances(){
+    public void supprimerToutesProvenances() {
         this.provenance.clear();
     }
-
 
     // Redéfinition de l'affichage de la classe
     @Override
     public String toString() {
-        return "\"" + this.nom  + "\", " + this.poids + "kg";
+        return "\"" + this.nom + "\", " + this.poids + "kg";
 
     }
 }

@@ -1,6 +1,6 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 06
+ Laboratoire : 07
  Fichier     : Regime.java
  Auteurs     : Yohann Meyer, Guillaume Zaretti
  Date        : 19.12.2017
@@ -15,7 +15,6 @@
  */
 import java.util.*;
 
-
 public class Cri {
 
     // Constructeur minimal
@@ -27,17 +26,18 @@ public class Cri {
     public String getCri() {
         return nom;
     }
+
     // Setter du cri de l'animal
     public void setCri(String nom) {
         this.nom = nom;
     }
-    
+
     private String nom;
 
+    // Redéfinition de l'affichage de la classe
     @Override
     public String toString() {
         return nom;
     }
-
 
 }

@@ -1,6 +1,6 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 06
+ Laboratoire : 07
  Fichier     : Zoo.java
  Auteurs     : Yohan Meyer, Guillaume Zaretti
  Date        : 19.12.2017
@@ -48,7 +48,6 @@ public class Zoo {
         }
     }
 
-
     //Supprime du zoo chaque anima(l/aux) donné(s) en paramètre.
     public void supprimerAnimaux(Animal... animaux) {
         for (Animal a : animaux) {
@@ -56,36 +55,31 @@ public class Zoo {
         }
     }
 
-    void afficheByEspeces() {
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-
-    public void affiche(){
+    //Affichage du zoo.
+    public void affiche() {
 
         HashMap< Class<? extends Animal>, Integer> liste = this.listeAnimaux();
         String str = this.nom + " héberge: \n";
 
-        for(Class c : liste.keySet()){
+        for (Class c : liste.keySet()) {
             str += liste.get(c) + " " + c.getSimpleName() + "\n";
         }
         System.out.println(str);
 
-
     }
 
-    public void afficheProvenance(){
+    //Affichage les provenances de chaque espèces.
+    public void afficheProvenance() {
 
         HashMap<Class<? extends Animal>, Integer> liste = this.listeAnimaux();
         String str = "Origines des animaux: \n";
 
-        for(Animal a : animaux){
-            if(liste.containsKey( a.getClass() )){
+        for (Animal a : animaux) {
+            if (liste.containsKey(a.getClass())) {
                 ArrayList<Pays> provenance = a.getPays();
                 str += a.getClass().getSimpleName();
-                for(Pays pays : provenance){
-                str += ", " + pays.getNom() ;
+                for (Pays pays : provenance) {
+                    str += ", " + pays.getNom();
                 }
                 str += "\n";
                 liste.remove(a.getClass());
@@ -95,33 +89,33 @@ public class Zoo {
 
     }
 
-    public void afficheResume(){
+   
+    public void afficheResume() {
         String str = "résumé:\n";
 
-        for(Animal a : animaux){
-            str += a.toString() +
-                    a.getPays().toString() +
-                    a.getRegime().toString() + "\n";
+        for (Animal a : animaux) {
+            str += a.toString()
+                    + a.getPays().toString()
+                    + a.getRegime().toString() + "\n";
         }
         System.out.println(str);
     }
 
-
-    public double cout(){
+    public double cout() {
         double cout = 0;
-        for (Animal a : animaux){
-           HashMap<Nourriture, Double> food =  a.getRegime().getQuantites();
-           for(Nourriture n : food.keySet()){
-               cout += n.getPrixAnnuel()*food.get(n);
-           }
+        for (Animal a : animaux) {
+            HashMap<Nourriture, Double> food = a.getRegime().getQuantites();
+            for (Nourriture n : food.keySet()) {
+                cout += n.getPrixAnnuel() * food.get(n);
+            }
         }
         return cout;
     }
 
-    private HashMap<Class<? extends Animal>, Integer> listeAnimaux(){
-        HashMap< Class<? extends Animal>, Integer> liste = new HashMap< >();
-        for(Animal a : animaux) {
-             Class<? extends Animal> classAnimal = a.getClass();
+    private HashMap<Class<? extends Animal>, Integer> listeAnimaux() {
+        HashMap< Class<? extends Animal>, Integer> liste = new HashMap<>();
+        for (Animal a : animaux) {
+            Class<? extends Animal> classAnimal = a.getClass();
 
             if (!liste.containsKey(classAnimal)) {
                 liste.put(classAnimal, 1);
@@ -134,7 +128,5 @@ public class Zoo {
 
     private String nom;
     private ArrayList<Animal> animaux = new ArrayList<Animal>();
-
-
 
 }

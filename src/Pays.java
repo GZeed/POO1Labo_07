@@ -1,6 +1,6 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 06
+ Laboratoire : 07
  Fichier     : Pays.java
  Auteurs     : Yohann Meyer, Guillaume Zaretti
  Date        : 19.12.2017
@@ -34,10 +34,9 @@ public class Pays {
 
     private String nom;
 
+    // Redéfinition de l'affichage de la classe
     @Override
     public String toString() {
         return nom;
     }
-
-
 }

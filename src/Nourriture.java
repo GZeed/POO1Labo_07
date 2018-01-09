@@ -1,6 +1,6 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 06
+ Laboratoire : 07
  Fichier     : Nourriture.java
  Auteurs     : Yohann Meyer, Guillaume Zaretti
  Date        : 19.12.2017
@@ -35,7 +35,7 @@ public class Nourriture {
 
     // Getter du prix annuel de la nourriture
     public double getPrixAnnuel() {
-       return prixAnnuel;
+        return prixAnnuel;
     }
 
     // Setter du prix annuel de la nourriture
@@ -43,7 +43,7 @@ public class Nourriture {
         this.prixAnnuel = prixAnnuel;
     }
 
-
+    // Redéfinition de l'affichage de la classe
     @Override
     public String toString() {
         return nom;

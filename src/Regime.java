@@ -1,6 +1,6 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : 06
+ Laboratoire : 07
  Fichier     : Regime.java
  Auteurs     : Yohann Meyer, Guillaume Zaretti
  Date        : 19.12.2017
@@ -40,7 +40,6 @@ public class Regime {
         this.nom = nom;
     }
 
-
     //Ajoute une nouritures donné en paramètre au régimes courant
     public void setQuantites(Nourriture nourriture, double quantite) {
         if (!quantites.containsKey(nourriture)) {
@@ -48,24 +47,20 @@ public class Regime {
         }
     }
 
-    /*public void supprimerNourritures(Nourriture... nouritures){  
-    }*/
     //Supprimer une nouritures donné en paramètre au régimes courant
     public void supprimerNourriture(Nourriture nourriture) {
         quantites.remove(nourriture);
     }
 
-    public HashMap<Nourriture, Double> getQuantites(){
+    public HashMap<Nourriture, Double> getQuantites() {
         return quantites;
     }
-
-
 
     // Redéfinition de l'affichage de la classe
     @Override
     public String toString() {
-        String str = nom + ": " ;
-        for(Nourriture n : quantites.keySet()){
+        String str = nom + ": ";
+        for (Nourriture n : quantites.keySet()) {
             str += n.toString() + " " + quantites.get(n) + "kg ";
         }
         return str;
@@ -73,8 +68,5 @@ public class Regime {
 
     private String nom;
     private HashMap<Nourriture, Double> quantites;
-
-
-
 
 }

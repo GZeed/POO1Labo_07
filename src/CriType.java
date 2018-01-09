@@ -1,10 +1,19 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 07
+ Fichier     : CriType.java
+ Auteurs     : Yohann Meyer, Guillaume Zaretti
+ Date        : 19.12.2017
+ 			   
 
+ Compilateur : jdk1.8.0_144
+ -----------------------------------------------------------------------------------
+ */
 
-class CriType{
+class CriType {
 
-    static final Cri rugissement = new Cri("rugissement");
-    static final Cri hurlement = new Cri("hurlement");
-    static final Cri sifflement = new Cri("sifflement");
-
+    static final Cri RUGISSEMENT = new Cri("rugissement");
+    static final Cri HURLEMENT = new Cri("hurlement");
+    static final Cri SIFFLEMENT = new Cri("sifflement");
 
 }
