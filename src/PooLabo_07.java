@@ -39,6 +39,7 @@ public class PooLabo_07 {
 
         zooTycoon.afficheProvenance();
         zooTycoon.afficheResume();
+        System.out.print(zooTycoon.cout());
         zooTycoon.supprimerAnimaux(animaux[3]);
         
         zooTycoon.afficheByEspeces();

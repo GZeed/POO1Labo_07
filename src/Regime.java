@@ -42,7 +42,7 @@ public class Regime {
 
 
     //Ajoute une nouritures donné en paramètre au régimes courant
-    public void addNourr(Nourriture nourriture, double quantite) {
+    public void setQuantites(Nourriture nourriture, double quantite) {
         if (!quantites.containsKey(nourriture)) {
             quantites.put(nourriture, quantite);
         }
@@ -55,10 +55,11 @@ public class Regime {
         quantites.remove(nourriture);
     }
 
-    //Modifier une nouritures donné en paramètre au régimes courant
-    public void modifierQuantiteeNourriture(Nourriture nourriture, double quantite) {
-        quantites.put(nourriture, quantite);
+    public HashMap<Nourriture, Double> getQuantites(){
+        return quantites;
     }
+
+
 
     // Redéfinition de l'affichage de la classe
     @Override
@@ -71,7 +72,7 @@ public class Regime {
     }
 
     private String nom;
-    private Map<Nourriture, Double> quantites;
+    private HashMap<Nourriture, Double> quantites;
 
 
 

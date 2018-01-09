@@ -107,6 +107,17 @@ public class Zoo {
     }
 
 
+    public double cout(){
+        double cout = 0;
+        for (Animal a : animaux){
+           HashMap<Nourriture, Double> food =  a.getRegime().getQuantites();
+           for(Nourriture n : food.keySet()){
+               cout += n.getPrixAnnuel()*food.get(n);
+           }
+        }
+        return cout;
+    }
+
     private HashMap<Class<? extends Animal>, Integer> listeAnimaux(){
         HashMap< Class<? extends Animal>, Integer> liste = new HashMap< >();
         for(Animal a : animaux) {
